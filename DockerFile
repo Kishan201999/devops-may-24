@@ -1,0 +1,15 @@
+#Stage 1
+FROM: "local host"
+Working Dir : /app
+Copy: root/maven
+RUN npm run -build
+Expose : 80
+
+
+
+#Stage 2
+FROM : "local host"
+Working Dir : /app/JDK
+COPY : root/JDK
+Run ./JDK.exc
+Expose : 8080
